@@ -2,10 +2,9 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-import "./Header.css";
 
 export default function Header({ path, scroll }) {
-  const [sideBar, setSideBar] = useState(true);
+  const [sideBar, setSideBar] = useState(false);
 
   // true
   // false
@@ -21,11 +20,11 @@ export default function Header({ path, scroll }) {
 
   return (
     <>
-      <header className=" w-full relative child:font-Oswald  ">
+      <header className=" w-full relative child:font-Oswald   ">
         <div
-          className={`fixed bg-primary px-10 lg:px-0  top-0 z-30 transition-all   w-full ${
-            scroll > 300 ? "lg:bg-primary" : ""
-          } lg:bg-transparent     flex flex-row-reverse items-center justify-between`}
+          className={`fixed bg-primary   px-5 lg:px-0  top-0 z-50 transition-all    w-full ${
+            scroll > 200 ? "lg:bg-primary" : "md:bg-inherit "
+          }  flex flex-row-reverse items-center justify-between`}
         >
           {/* Desktop nav */}
           <nav className=" hidden lg:flex items-center lg:my-24 ">
