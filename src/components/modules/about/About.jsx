@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className=" my-20 lg:px-20">
       <div >
-        <div className="flex flex-wrap gap-y-6 px-10 md:px-0  justify-center md:gap-x-20">
+        <div className="flex flex-wrap md:flex-nowrap gap-y-6 px-10 lg:px-0  justify-center md:gap-x-20">
           <div className="md:w-[450px]">
             <div className="flex gap-x-6 tracking-widest text-4xl font-Oswald">
               <h3>ABOUT</h3>

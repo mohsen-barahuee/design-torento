@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-
 export default function Header({ path, scroll }) {
   const [sideBar, setSideBar] = useState(false);
 
@@ -83,13 +82,21 @@ export default function Header({ path, scroll }) {
           </div>
           {/* Logo NavBar */}
           <div>
-            <div className=" lg:px-10 lg:py-10 flex flex-col lg:bg-primary   items-start  ">
+            <div
+              className={`flex flex-col items-start transition-all lg:px-10 ${
+                scroll > 200 ? "lg:py-1" : "lg:py-10"
+              }   lg:bg-primary   `}
+            >
               <img
-                className="w-20 md:w-24 lg:w-32  mx-auto  "
+                className="w-20 md:w-24 lg:w-30 mx-auto  "
                 src="/images/logo.png"
                 alt="logo"
               />
-              <div className="hidden lg:inline-block child:uppercase">
+              <div
+                className={`hidden ${
+                  scroll > 200 ? "hidden" : "lg:inline-block"
+                } uppercase`}
+              >
                 <h4 className="text-secondary text-5xl ">bauen</h4>
                 <span className="text-xs text-center block">
                   innovate design

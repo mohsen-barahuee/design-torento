@@ -11,26 +11,46 @@ export default function OurProjects() {
     { id: 4, src: "/images/our-project/4.jpg" },
   ];
 
+  
+
   return (
-    <div className=" container my-20 lg:px-44">
+    <div className=" container my-20 px-6 lg:px-44">
       <div className=" uppercase flex gap-x-4 text-4xl font-Oswald tracking-widest">
         <h4>our</h4>
         <h4 className="text-secondary">project</h4>
       </div>
-      <Swiper
-        slidesPerView={2}
-        spaceBetween={40}
-        className="my-10"
-        modules={[Pagination]}
-       
-      >
-        {ourProjects.map((items, index) => {
-          return <SwiperSlide key={index}>
-            <img  src={items.src} alt="" />
-          </SwiperSlide>;
-        })}
-      </Swiper>
-      
+      <div className="hidden md:block">
+        <Swiper
+          slidesPerView={2}
+          spaceBetween={40}
+          className="my-10"
+          modules={[Pagination]}
+        >
+          {ourProjects.map((items, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <img src={items.src} alt="" />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+      <div className="md:hidden">
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={40}
+          className="my-10"
+          modules={[Pagination]}
+        >
+          {ourProjects.map((items, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <img src={items.src} alt="" />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </div>
   );
 }
