@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import "swiper/css/pagination";
+
 
 export default function OurProjects() {
   const ourProjects = [
@@ -14,7 +14,7 @@ export default function OurProjects() {
   
 
   return (
-    <div className=" container my-20 px-6 lg:px-44">
+    <div className=" container my-20 px-5 lg:px-44">
       <div className=" uppercase flex gap-x-4 my-10 justify-center md:justify-start text-5xl font-Oswald tracking-widest">
         <h4>our</h4>
         <h4 className="text-secondary">project</h4>

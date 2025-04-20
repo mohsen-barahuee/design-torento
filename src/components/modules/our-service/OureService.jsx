@@ -2,12 +2,12 @@ import React from "react";
 
 export default function OureService() {
   return (
-    <div className="container px-10  my-20  lg:px-44">
+    <div className="container px-5  my-20  lg:px-44">
       <div className=" uppercase flex gap-x-4 my-10 justify-center md:justify-start text-5xl font-Oswald tracking-widest">
         <h4>our</h4>
         <h4 className="text-secondary">services</h4>
       </div>
-      <div className="flex flex-wrap lg:flex-nowrap gap-x-20 justify-center items-center">
+      <div className="flex px-4 md:px-0 flex-wrap lg:flex-nowrap gap-x-20 justify-center items-center">
         <div className="flex flex-col gap-y-5">
           <img src="/images/icons/icon-1.png" className="w-20" alt="" />
           <span className="font-Oswald">ARCHITECTURE</span>
