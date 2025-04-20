@@ -6,7 +6,7 @@ export default function About() {
       <div >
         <div className="flex flex-wrap md:flex-nowrap gap-y-6 px-10 lg:px-0  justify-center md:gap-x-20">
           <div className="md:w-[450px]">
-            <div className="flex gap-x-6 tracking-widest text-4xl font-Oswald">
+            <div className="uppercase flex gap-x-4 my-10 justify-center md:justify-start text-5xl font-Oswald tracking-widest">
               <h3>ABOUT</h3>
               <h3 className="text-secondary">BAUEN</h3>
             </div>
