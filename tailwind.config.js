@@ -22,18 +22,23 @@ module.exports = {
 
         "Oswald": "oswald",
         "Didact-Gothic": "Didact Gothic"
-  
+
       },
+
+      screens: {
+        "lg": "1100px"
+      }
 
 
     },
 
-   
-    
+
+
 
     container: {
       center: true
     }
+
 
 
 

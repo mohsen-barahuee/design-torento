@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 
 export default function Header({ path, scroll }) {
@@ -28,7 +29,7 @@ export default function Header({ path, scroll }) {
           {/* Desktop nav */}
           <nav className=" hidden lg:flex items-center lg:my-24 ">
             <ul
-              className=" flex  md:pr-10 lg:pr-28 gap-x-4 text-xl  child:uppercase child-hover:text-secondary
+              className=" flex items-center  md:pr-10 lg:pr-20 gap-x-4 text-xl  child:uppercase child-hover:text-secondary
            child:transition-all child:ease-linear childduration-200 child:cursor-pointer "
             >
               <li
@@ -36,9 +37,13 @@ export default function Header({ path, scroll }) {
                   path.pathname === "/" ? "text-secondary" : "text-white"
                 }
               >
-                home
+                <Link to={'/'}>home</Link>
               </li>
-              <li>about</li>
+              <li className={
+                  path.pathname === "/about" ? "text-secondary" : "text-white"
+                }>
+                <Link to={'/about'}>about</Link>
+              </li>
               <li>services</li>
               <li>projects</li>
               <li>
@@ -49,8 +54,15 @@ export default function Header({ path, scroll }) {
                   </svg>
                 </span>
               </li>
-              <li>blog</li>
+              <li className={
+                  path.pathname === "/blogs" ? "text-secondary" : "text-white"
+                }>
+                <Link to={'/blogs'}>blog</Link>
+              </li>
               <li>contact</li>
+              <li className="bg-secondary hover:bg-card-color  rounded-lg px-5 py-2">
+                login | sign up
+              </li>
             </ul>
           </nav>
           {/* Mobile Nav */}
@@ -97,7 +109,7 @@ export default function Header({ path, scroll }) {
                   scroll > 200 ? "hidden" : "lg:inline-block"
                 } uppercase`}
               >
-                <h4 className="text-secondary text-5xl ">bauen</h4>
+                <h4 className="text-secondary  text-5xl ">bauen</h4>
                 <span className="text-xs text-center block">
                   innovate design
                 </span>
