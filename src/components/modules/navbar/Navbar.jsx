@@ -8,10 +8,10 @@ export default function Navbar({ path, scroll }) {
   return (
     <div
       className={`${
-        path.pathname !== "/" ? "" : "fixed top-0 z-50 "
+        path.pathname === "/"  ? "fixed  top-0" : ""
       } bg-primary px-5 lg:px-0   transition-all child:font-Oswald   w-full ${
-        scroll > 50 ? "lg:bg-primary fixed top-0 z-50 " : "md:bg-inherit "
-      }  flex flex-row-reverse items-center justify-between`}
+        scroll > 50 ? "lg:bg-primary  " : "md:bg-inherit "
+      }  flex flex-row-reverse items-center justify-between z-50`}
     >
       {/* Desktop nav */}
       <nav className=" hidden lg:flex items-center lg:my-24  ">

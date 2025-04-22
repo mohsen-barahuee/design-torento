@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
+
 root.render(
   <BrowserRouter>
     <React.StrictMode>
