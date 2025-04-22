@@ -17,7 +17,7 @@ export default function ClientMessages() {
           className="w-full object-cover h-[450px] opacity-50"
           alt=""
         />
-        <div className=" absolute top-0 items-center py-10  lg:top-10 flex  flex-col lg:flex-row lg:left-1/2 lg:-translate-x-1/2   lg:items-start gap-y-5   lg:justify-between z-10 w-full lg:px-52   ">
+        <div className=" absolute top-0 items-center py-10  lg:top-10 flex  flex-col lg:flex-row lg:left-1/2 lg:-translate-x-1/2   lg:items-start gap-y-5   lg:justify-between w-full lg:px-52   ">
           <div>
             <div className="flex flex-col   gap-y-3  ">
               <div className="cursor-pointer">

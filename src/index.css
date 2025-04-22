@@ -22,15 +22,14 @@
   .Drop-Down > ul {
     transition: all 150ms ease-in-out;
     transition-delay: 50ms;
+    z-index: -99999;
+    top: 200px;
     opacity: 0;
-   
-    
   }
 
-   .Drop-Down:hover > ul {
-   
+  .Drop-Down:hover > ul {
+    top: 40px;
+    z-index: 10000;
     opacity: 100;
-   ;
-    
-  } 
+  }
 }
