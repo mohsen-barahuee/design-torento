@@ -16,8 +16,21 @@
     background-color: #272727;
     color: white;
   }
-
 }
 
+@layer utilities {
+  .Drop-Down > ul {
+    transition: all 150ms ease-in-out;
+    transition-delay: 50ms;
+    opacity: 0;
+   
+    
+  }
 
-
+   .Drop-Down:hover > ul {
+   
+    opacity: 100;
+   ;
+    
+  } 
+}

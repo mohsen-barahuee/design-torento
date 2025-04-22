@@ -4,6 +4,7 @@ import PersonBlog from "./components/pages/blogs/person-blog/PersonBlog"
 import AboutPage from "./components/pages/about/AboutPage"
 import Pricing from "./components/pages/pricing/Pricing"
 import Process from "./components/pages/process/Process"
+import NotFound from "./components/pages/404/404"
 
 
 
@@ -16,6 +17,7 @@ let routes = [
     { path: '/about', element: <AboutPage /> },
     { path: '/price', element: <Pricing /> },
     { path: '/process', element: <Process /> },
+    { path: '/*', element: <NotFound /> },
 ]
 
 

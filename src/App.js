@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from './components/modules/header/Header'
 import Footer from './components/modules/footer/Footer'
+import Navbar from './components/modules/navbar/Navbar'
 import { useRoutes, useLocation } from 'react-router-dom'
 import routes from './route'
 
@@ -57,7 +58,8 @@ export default function App() {
 
 
       </svg>
-      <Header scroll={scrollPostion} path={location} />
+      <Navbar scroll={scrollPostion} path={location} />
+   
       {route}
       <Footer />
     </>
