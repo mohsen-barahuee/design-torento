@@ -34,7 +34,7 @@ export default function Header() {
           >
             {headerImages.map((items, index) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <div>
                     <img
                       className="w-full h-[550px]  lg:h-[690px] opacity-50 lg:opacity-75 lg:pl-40 "

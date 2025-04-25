@@ -9,7 +9,7 @@ export default function Navbar({ path, scroll }) {
   return (
     <div
       className={`${
-        path.pathname === "/" ? "fixed  top-0" : ""
+        path.pathname === "/" || "process" ? "fixed  top-0" : ""
       } bg-primary px-5 lg:px-0   transition-all child:font-Oswald   w-full ${
         scroll > 150 ? "lg:bg-primary fixed  top-0  " : "md:bg-inherit "
       }  flex flex-row-reverse items-center justify-between z-50`}
