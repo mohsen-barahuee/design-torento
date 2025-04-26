@@ -1,9 +1,16 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 export default function About() {
+
+  const location = useLocation()
+
+  console.log(location.pathname);
+  
+
   return (
-    <div className=" my-20 lg:px-20">
-      <div >
+    <div className={`${location.pathname !== "/" ? "mt-40 lg:mt-72" : "my-20"} lg:px-20`}>
+      <div>
         <div className="flex flex-wrap md:flex-nowrap gap-y-6 px-10 lg:px-0  justify-center md:gap-x-20">
           <div className="md:w-[450px]">
             <div className="uppercase flex gap-x-4 my-10 justify-center md:justify-start text-5xl font-Oswald tracking-widest">
@@ -32,7 +39,9 @@ export default function About() {
           <div className="w-[400px] relative">
             <img className="w-[400px] " src="/images/about.jpg" alt="" />
             <div className="w-full h-full border absolute top-5 right-5 border-text-color/50 -z-20"></div>
-            <button className=" absolute right-0 -bottom-5 text-xs1 uppercase bg-card-color px-10 py-5 tracking-[3px] font-Oswald text-wrap">canada Office</button>
+            <button className=" absolute right-0 -bottom-5 text-xs1 uppercase bg-card-color px-10 py-5 tracking-[3px] font-Oswald text-wrap">
+              canada Office
+            </button>
           </div>
         </div>
       </div>

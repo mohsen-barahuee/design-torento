@@ -20,15 +20,15 @@
 
 @layer utilities {
   .Drop-Down > ul {
-    transition: all 150ms ease-in-out;
-    transition-delay: 50ms;
+    transition: all 100ms ease-in-out;
+    transition-delay:30ms;
     z-index: -99999;
-    top: 200px;
+    top: 1200px;
     opacity: 0;
   }
 
   .Drop-Down:hover > ul {
-    top: 40px;
+    top: 120px;
     z-index: 10000;
     opacity: 100;
   }

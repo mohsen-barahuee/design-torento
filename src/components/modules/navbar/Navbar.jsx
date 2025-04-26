@@ -99,9 +99,11 @@ export default function Navbar({ path, scroll }) {
             </button>
           </div>
           <ul className=" w-full flex flex-col  items-end  font-Didact-Gothic child:border-b child:border-b-text-color text-text-color  child:py-2  px-4 child:w-full text-sm text-right tracking-widest uppercase  ">
-            <li className="hover:text-secondary">home</li>
             <li className="hover:text-secondary">
-              <Link to={'/about'}>about</Link>
+              <Link to={"/"}>home</Link>
+            </li>
+            <li className="hover:text-secondary">
+              <Link to={"/about"}>about</Link>
             </li>
             <li className="hover:text-secondary">serivces</li>
             <li className="hover:text-secondary">projects</li>
@@ -144,7 +146,7 @@ export default function Navbar({ path, scroll }) {
       </div>
       {/* Logo NavBar */}
       <div>
-        <Link to={'/'}>
+        <Link to={"/"}>
           <div
             className={`flex flex-col items-start transition-all lg:px-10 ${
               scroll > 150 ? "lg:py-1" : "lg:py-10"

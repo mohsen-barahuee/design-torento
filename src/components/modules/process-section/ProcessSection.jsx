@@ -19,7 +19,7 @@ export default function ProcessSection() {
             src="/images/our-project/2.jpg"
             alt=""
           />
-          <div className=" px-4 md:absolute  md:bottom-20  z-20">
+          <div className=" px-4 pt-20 md:pt-0 md:absolute   md:bottom-20  z-20">
             <div className="uppercase   flex  gap-x-4 my-10 justify-start md:justify-start text-4xl lg:text-5xl font-Oswald tracking-widest">
               <h3>pricing</h3>
               <h3 className="text-secondary">plan</h3>

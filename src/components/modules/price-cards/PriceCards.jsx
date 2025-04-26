@@ -4,24 +4,6 @@ export default function PriceCards() {
   return (
     <>
       <div className=" px-5  lg:px-24 mb-40">
-        <div className=" absolute top-0 -z-10 ">
-          <div className="w-full  ">
-            <div className="w-full hidden md:block h-full bg-gradient-to-t from-primary from-60% z-10 absolute bottom-0"></div>
-            <div className="  md:hidden w-full ">
-              <div className="  w-full h-[300px]  bg-gradient-to-t from-primary from-50% -z-10"></div>
-              <img
-                className="    -z-20  w-full opacity-30"
-                src="/images/our-project/2.jpg"
-                alt=""
-              />
-            </div>
-            <img
-              className=" hidden md:block  -z-10  w-full opacity-30"
-              src="/images/our-project/2.jpg"
-              alt=""
-            />
-          </div>
-        </div>
         <div className=" mt-28 md:mt-64">
           <div className="uppercase  flex gap-x-4 my-10 justify-start md:justify-start text-4xl md:text-5xl font-Oswald tracking-widest">
             <h3>pricing</h3>
