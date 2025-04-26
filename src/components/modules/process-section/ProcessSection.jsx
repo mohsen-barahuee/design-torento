@@ -3,7 +3,7 @@ import React from "react";
 export default function ProcessSection() {
   return (
     <>
-      <div className=" container my-20 lg:mb-40">
+      <div className=" container  lg:mb-20">
         <div className="w-full  relative">
           <div className="w-full hidden md:block h-full bg-gradient-to-t from-primary from-50% z-10 absolute bottom-0"></div>
           <div className=" relative md:hidden w-full ">
@@ -19,7 +19,7 @@ export default function ProcessSection() {
             src="/images/our-project/2.jpg"
             alt=""
           />
-          <div className=" px-4 md:absolute  md:bottom-0  z-20">
+          <div className=" px-4 md:absolute  md:bottom-20  z-20">
             <div className="uppercase   flex  gap-x-4 my-10 justify-start md:justify-start text-4xl lg:text-5xl font-Oswald tracking-widest">
               <h3>pricing</h3>
               <h3 className="text-secondary">plan</h3>
