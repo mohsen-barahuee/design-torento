@@ -61,7 +61,7 @@ export default function Navbar({ path, scroll }) {
           </li>
           <li className="hover:text-secondary">contact</li>
           <li className="bg-secondary hover:bg-card-color  rounded-lg px-5 py-2">
-            login | sign up
+            <Link to={"/register"}>login | sign up</Link>
           </li>
         </ul>
       </nav>

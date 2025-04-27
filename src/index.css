@@ -21,7 +21,7 @@
 @layer utilities {
   .Drop-Down > ul {
     transition: all 100ms ease-in-out;
-    transition-delay:30ms;
+    transition-delay: 30ms;
     z-index: -99999;
     top: 1200px;
     opacity: 0;
@@ -33,5 +33,5 @@
     opacity: 100;
   }
 
-
+ 
 }

@@ -5,7 +5,6 @@ export default function About() {
 
   const location = useLocation()
 
-  console.log(location.pathname);
   
 
   return (

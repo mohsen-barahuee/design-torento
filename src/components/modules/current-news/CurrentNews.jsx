@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function CurrentNews() {
+  const [width, setWidth] = useState(window.innerWidth);
   const newTime = new Date();
   const [firstSliceValue, setFirstSliceValue] = useState(null);
   const [secondSliceValue, setSecondSliceValue] = useState(null);
+
+  useEffect(() => {
+    const resizeHandler = () => setWidth(window.innerWidth);
+
+    window.addEventListener("resize", resizeHandler);
+
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, []);
+
+
+  
 
   const currenNewsValues = [
     {
@@ -41,7 +53,10 @@ export default function CurrentNews() {
 
       <div className="hidden  md:flex justify-center gap-x-10">
         {currenNewsValues
-          .slice(firstSliceValue ? firstSliceValue : 0, secondSliceValue ? secondSliceValue : 2)
+          .slice(
+            firstSliceValue ? firstSliceValue : 0,
+            secondSliceValue ? secondSliceValue : 2
+          )
           .map((items, index) => {
             return (
               <div key={index} className="relative">
@@ -66,7 +81,10 @@ export default function CurrentNews() {
       {/* Mobile Current News */}
       <div className="  md:hidden justify-center ">
         {currenNewsValues
-          .slice(firstSliceValue ? firstSliceValue : 0, secondSliceValue ? secondSliceValue : 1)
+          .slice(
+            firstSliceValue ? firstSliceValue : 0,
+            secondSliceValue ? secondSliceValue : 1
+          )
           .map((items, index) => {
             return (
               <div key={index} className="relative">
