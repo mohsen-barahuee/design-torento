@@ -33,5 +33,18 @@
     opacity: 100;
   }
 
+  .login-drop-down > ul{
+
+   top: 1280px;
+   opacity: 0;
+
+  }
+
+  .login-drop-down:hover > ul{
+
+    top: 60px;
+    opacity: 1;
+
+  }
  
 }

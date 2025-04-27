@@ -64,14 +64,14 @@ export default function ClientMessages() {
           <div className="flex justify-center lg:justify-start md:pl-32 gap-x-20">
             {ClientMessageIcons.map((items, index) => {
               return (
-                <>
+               
                   <img
                     key={index}
                     className="  w-10"
                     src={items.src}
                     alt=""
                   />
-                </>
+               
               );
             })}
           </div>

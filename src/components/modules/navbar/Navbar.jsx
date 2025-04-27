@@ -1,10 +1,28 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import DropDown from "../drop-down/DropDown";
 import { Link } from "react-router-dom";
 
-export default function Navbar({ path, scroll }) {
+export default function Navbar({ path, scroll, token }) {
   const [sideBar, setSideBar] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
+
+  const logOutHandler = async () => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/user`, {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if( response.status === 200){
+
+      alert("Log Out successfully")
+      window.location.reload()
+
+    }
+    
+  };
 
   return (
     <div
@@ -60,8 +78,27 @@ export default function Navbar({ path, scroll }) {
             <Link to={"/blogs"}>blog</Link>
           </li>
           <li className="hover:text-secondary">contact</li>
-          <li className="bg-secondary hover:bg-card-color  rounded-lg px-5 py-2">
-            <Link to={"/register"}>login | sign up</Link>
+          <li className=" relative px-5 login-drop-down transition-all delay-75 duration-75">
+            <Link
+              className="bg-secondary hover:bg-card-color block text-nowrap  rounded-lg px-5  py-2 "
+              to={token ? "/account" : "/register"}
+            >
+              {token ? (
+                <svg className="w-10 h-10">
+                  <use href="#user-icon"></use>
+                </svg>
+              ) : (
+                "login | sing up"
+              )}
+            </Link>
+            {token && (
+              <ul className="bg-card-color transition-all delay-75 child-hover:text-secondary   absolute  text-base w-full flex flex-col gap-y-5 font-Didact-Gothic capitalize text-center  py-4 ">
+                <li>
+                  <Link to={"/account"}>my account</Link>
+                </li>
+                <li onClick={logOutHandler}>log out</li>
+              </ul>
+            )}
           </li>
         </ul>
       </nav>

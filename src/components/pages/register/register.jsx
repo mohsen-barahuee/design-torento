@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function Register() {
   const navigate = useNavigate();
 
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true);
 
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
@@ -49,7 +49,9 @@ export default function Register() {
     );
 
     if (response.status === 200) {
+    
       navigate("/");
+      window.location.reload()
     }
   };
 

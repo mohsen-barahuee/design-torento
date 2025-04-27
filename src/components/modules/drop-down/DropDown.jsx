@@ -11,9 +11,9 @@ export default function DropDown({ title, items }) {
         </svg>
       </p>
       <ul className="  absolute flex flex-col gap-y-5    bg-card-color font-Didact-Gothic text-sm py-4 pl-5 pr-28 capitalize transition-all  ">
-        {items.map((items) => {
+        {items.map((items,index) => {
           return (
-            <li className="hover:text-secondary">
+            <li key={index} className="hover:text-secondary">
               <Link to={items.href}>{items.title}</Link>
             </li>
           );
