@@ -33,7 +33,9 @@ export default function InsertBlog({ writer }) {
       }
     );
 
-    console.log(response)
+    if(response.status === 201){
+      alert("Blog created")
+    }
   };
 
   return (

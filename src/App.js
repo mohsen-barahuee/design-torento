@@ -26,13 +26,13 @@ export default function App() {
 
   
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    window.addEventListener("scroll", () => {
-      setScrollPosition(window.scrollY)
+  //   window.addEventListener("scroll", () => {
+  //     setScrollPosition(window.scrollY)
 
-    })
-  }, [scrollPostion])
+  //   })
+  // }, [scrollPostion])
 
 
 

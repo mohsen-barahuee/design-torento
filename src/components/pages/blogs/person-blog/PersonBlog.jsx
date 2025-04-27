@@ -1,47 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Banner from "../../../modules/banner/banner";
 
 export default function PersonBlog() {
   const params = useParams();
+  const [blog, setBlog] = useState({});
+  const [loading, setLoading] = useState(true);
 
-  console.log(params);
+  useEffect(() => {
+    async function dataFetcher() {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_API_URL}/api/blogs/${params.id}`
+        );
+        const data = await response.json();
+        setBlog(data);
+        setLoading(false)
+      } catch (error) {
+        console.error("Error fetching blog:", error);
+      }
+    }
+
+    dataFetcher();
+  }, [params.id]);
+
+  console.log(blog);
+
+  if (loading) {
+    return <p>Loading...</p>; // show this until blog is ready
+  }
+  
 
   return (
     <>
       <Banner />
       <div className="md:mt-72 px-40 container">
         <div className="flex  flex-col gap-y-10">
-          <img
-            src="/images/our-project/1.jpg"
-            className=" w-full h-[500px]"
-            alt=""
-          />
+          <img src={blog.image} className=" w-full h-[500px]" alt="" />
           <div className=" flex gap-y-5 flex-col">
-            <h3 className="text-3xl font-Oswald tracking-widest text-secondary">
-              MODERN ARCHITECTURAL STRUCTURES
+            <h3 className="text-3xl font-Oswald tracking-widest uppercase text-secondary">
+              {blog.title}
             </h3>
             <div className="flex flex-col gap-y-3 child:text-text-color font-Didact-Gothic">
-              <p>
-                Quisque pretium fermentum quam, sit amet cursus ante
-                sollicitudin vel. Morbi consequat risus consequat, porttitor
-                orci sit amet, tincidunt nisl. Integer quis sapien nec elit
-                ultrices euismod sit amet id lacus. Sed a imperdiet erat. Duis
-                eu est dignissim lacus dictum hendrerit quis vitae mi. Fusce eu
-                nulla ac nisi cursus tincidunt. Interdum et malesuada fames ac
-                ante ipsum primis in faucibus. Integer tristique sem eget leo
-                faucibus porttitor. Suspendisse sagittis, magna sed varius
-                tincidunt, tellus tortor non neque.
-              </p>
-              <p>
-                Nulla vitae metus tincidunt, varius nunc quis, porta nulla.
-                Pellentesque vel dui nec libero auctor pretium id sed arcu. Nunc
-                consequat diam id nisl blandit dignissim. Etiam commodo diam
-                dolor, at scelerisque sem finibus sit amet. Curabitur id lectus
-                eget purus finibus laoreet. Nam eget lectus ac sem lacinia
-                hendrerit sed nec magna. Maecenas vulputate magna sed nunc
-                pellentesque, in consectetur nisi condimentum.
-              </p>
+              <p>{blog.body}</p>
             </div>
           </div>
         </div>

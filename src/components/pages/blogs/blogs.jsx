@@ -1,9 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Banner from "../../modules/banner/banner";
 
 export default function Blogs() {
-  const lists = [0, 1, 2, 3, 4];
+  const [blogs, setBlogs] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 4;
+
+  useEffect(() => {
+    async function fetchBlogs() {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_API_URL}/api/blogs/`
+        );
+        const data = await response.json();
+        setBlogs(data.getBlog);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    }
+
+    fetchBlogs();
+  }, []);
+
+  // Logic for displaying current blogs
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  console.log(blogs);
+
+  // Logic for page numbers
+  const totalPages = Math.ceil(blogs.length / blogsPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
     <>
@@ -15,7 +44,7 @@ export default function Blogs() {
             <h3 className="text-secondary">blog</h3>
           </div>
           <div className="flex flex-col gap-y-20">
-            {lists.map((items, index) => {
+            {currentBlogs.map((items, index) => {
               return (
                 <div
                   key={index}
@@ -24,14 +53,14 @@ export default function Blogs() {
                   }  items-center gap-y-8 gap-x-20`}
                 >
                   <img
-                    src="/images/our-project/1.jpg"
+                    src={items.image}
                     className=" w-[400px] h-[250px] lg:w-[600px] lg:h-[400px]"
                     alt=""
                   />
                   <div className="flex gap-x-5 items-center">
                     <div className="flex flex-col items-center gap-y-1 uppercase font-Oswald">
                       <span className=" text-5xl lg:text-6xl text-secondary">
-                        03
+                        0{index + 1}
                       </span>
                       <span className="text-sm text-nowrap text-text-color">
                         dec 2021
@@ -39,13 +68,11 @@ export default function Blogs() {
                     </div>
                     <div className="flex flex-col gap-y-4 uppercase font-Oswald tracking-widest">
                       <span className="text-secondary text-sm">
-                        bean / inteitor
+                        {items.writer.firstname}/ {items.writer.lastname}
                       </span>
-                      <span className=" text-2xl">
-                        moder artitehcture structure
-                      </span>
+                      <span className=" text-2xl">{items.title}</span>
                       <Link
-                        to={"/blogs/22"}
+                        to={`/blogs/${items._id}`}
                         className="flex items-center text-sm  gap-x-4 text-secondary uppercase"
                       >
                         <div className="w-5 h-[1.5px] bg-secondary "></div>
@@ -57,6 +84,18 @@ export default function Blogs() {
               );
             })}
           </div>
+        </div>
+        <div className="flex justify-center mt-20">
+          {pageNumbers.map((number) => (
+            <button
+              key={number}
+              onClick={() => setCurrentPage(number)}
+              className={`ml-5 border border-secondary text-secondary transition-all duration-150 hover:bg-secondary hover:text-white w-10 h-10 rounded-full `}
+          
+            >
+              {number}
+            </button>
+          ))}
         </div>
       </div>
     </>
