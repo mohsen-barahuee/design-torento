@@ -10,8 +10,8 @@ export default function PriceCards() {
             <h3 className="text-secondary">plan</h3>
           </div>
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-y-5 gap-x-10">
-              <div className="flex flex-col items-start gap-y-6 bg-card-color py-10 pl-8">
+            <div  className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-y-5 gap-x-10">
+              <div data-aos="flip-down" className="flex flex-col items-start gap-y-6 bg-card-color py-10 pl-8">
                 <div className="flex flex-col gap-y-4">
                   <span className="font-Oswald uppercase text-secondary tracking-widest ">
                     basic plan
@@ -52,7 +52,7 @@ export default function PriceCards() {
                   discover
                 </a>
               </div>
-              <div className="flex flex-col items-start gap-y-6 bg-card-color py-10 pl-8">
+              <div data-aos="flip-down" className="flex flex-col items-start gap-y-6 bg-card-color py-10 pl-8">
                 <div className="flex flex-col gap-y-4">
                   <span className="font-Oswald uppercase text-secondary tracking-widest ">
                     basic plan
@@ -93,7 +93,7 @@ export default function PriceCards() {
                   discover
                 </a>
               </div>
-              <div className="flex flex-col items-start gap-y-6 bg-card-color py-10 pl-8">
+              <div data-aos="flip-down" className="flex flex-col items-start gap-y-6 bg-card-color py-10 pl-8">
                 <div className="flex flex-col gap-y-4">
                   <span className="font-Oswald uppercase text-secondary tracking-widest ">
                     basic plan

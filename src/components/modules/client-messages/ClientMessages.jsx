@@ -30,7 +30,7 @@ export default function ClientMessages() {
               </span>
             </div>
           </div>
-          <div className="bg-primary w-72 py-10 md:pb-16 px-5 ">
+          <div  data-aos="flip-left" className="bg-primary w-72 py-10 md:pb-16 px-5 ">
             <div className="flex flex-col gap-y-3">
               <span className="uppercase font-Oswald text-xl tracking-widest  text-left">
                 What Client's say ?

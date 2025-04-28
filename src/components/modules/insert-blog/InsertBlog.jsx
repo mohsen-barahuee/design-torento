@@ -42,11 +42,11 @@ export default function InsertBlog({ writer }) {
     <div className=" border px-4 py-5">
       <div>
         <div className="w-full relative cursor-pointer">
-          <div className="w-[500px] h-[200px] bg-gray-300/10  cursor-pointer flex justify-center items-center">
+          <div className="lg:w-[500px] lg:h-[200px] bg-gray-300/10 p-4  cursor-pointer flex justify-center items-center">
             {preview ? (
               <img src={preview} className="w-full h-full" alt="preview" />
             ) : (
-              <span className="text-text-color  text-2xl capitalize font-Didact-Gothic">
+              <span className="text-text-color text-xl text-nowrap  md:text-2xl capitalize font-Didact-Gothic">
                 upload picture for the title
               </span>
             )}

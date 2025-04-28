@@ -10,7 +10,7 @@ export default function DropDown({ title, items }) {
           <use href="#arrow-down"></use>
         </svg>
       </p>
-      <ul className="  absolute flex flex-col gap-y-5    bg-card-color font-Didact-Gothic text-sm py-4 pl-5 pr-28 capitalize transition-all  ">
+      <ul className="  absolute  flex flex-col gap-y-5   bg-card-color font-Didact-Gothic text-sm py-4 pl-5 pr-28 capitalize transition-all  ">
         {items.map((items,index) => {
           return (
             <li key={index} className="hover:text-secondary">

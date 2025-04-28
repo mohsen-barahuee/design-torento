@@ -4,7 +4,7 @@ import { Pagination } from "swiper/modules";
 
 export default function OurTeam() {
   return (
-    <div className=" container my-20 px-5">
+    <div  data-aos="flip-left" className=" container my-20 px-5">
       <div className="uppercase flex gap-x-4 my-10 justify-start text-5xl font-Oswald tracking-widest">
         <h3>our</h3>
         <h3 className="text-secondary">team</h3>

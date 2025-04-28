@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Banner from "../../modules/banner/banner";
+import Loading from "../../modules/loading/Loading";
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 4;
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchBlogs() {
@@ -15,6 +17,7 @@ export default function Blogs() {
         );
         const data = await response.json();
         setBlogs(data.getBlog);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching blogs:", error);
       }
@@ -23,12 +26,14 @@ export default function Blogs() {
     fetchBlogs();
   }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
+
   // Logic for displaying current blogs
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
   const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
-
-  console.log(blogs);
 
   // Logic for page numbers
   const totalPages = Math.ceil(blogs.length / blogsPerPage);
@@ -47,6 +52,9 @@ export default function Blogs() {
             {currentBlogs.map((items, index) => {
               return (
                 <div
+                  data-aos={
+                    index % 2 === 0 ? "fade-down-right" : "fade-down-left"
+                  }
                   key={index}
                   className={`flex flex-col md:flex-row ${
                     index % 2 === 0 ? "" : "lg:flex-row-reverse"
@@ -89,9 +97,14 @@ export default function Blogs() {
           {pageNumbers.map((number) => (
             <button
               key={number}
-              onClick={() => setCurrentPage(number)}
-              className={`ml-5 border border-secondary text-secondary transition-all duration-150 hover:bg-secondary hover:text-white w-10 h-10 rounded-full `}
-          
+              onClick={() => {
+                setCurrentPage(number);
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }}
+              className={`ml-5 border  border-secondary text-secondary transition-all duration-150 hover:bg-secondary hover:text-white w-10 h-10 rounded-full `}
             >
               {number}
             </button>

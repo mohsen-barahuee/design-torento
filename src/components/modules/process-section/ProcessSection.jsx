@@ -25,7 +25,7 @@ export default function ProcessSection() {
               <h3 className="text-secondary">plan</h3>
             </div>
             <div className="flex flex-col gap-y-5  md:flex-row gap-x-10">
-              <div className="flex flex-col gap-y-10">
+              <div data-aos="fade-up-right" className="flex flex-col gap-y-10">
                 <div className=" hidden lg:flex translate-x-24 items-center gap-x-4">
                   <div className="border border-dotted p-4 rounded-full">
                     <img
@@ -55,7 +55,7 @@ export default function ProcessSection() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col lg:translate-y-10 gap-y-10">
+              <div data-aos="fade-up" className="flex flex-col lg:translate-y-10 gap-y-10">
                 <div className="hidden lg:flex translate-x-24 items-center gap-x-4">
                   <div className="border border-dotted p-4 rounded-full">
                     <img
@@ -81,7 +81,7 @@ export default function ProcessSection() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col gap-y-10">
+              <div  data-aos="fade-down" className="flex flex-col gap-y-10">
                 <div className="hidden lg:flex lg:translate-x-24 items-center gap-x-4">
                   <div className="border border-dotted p-4 rounded-full">
                     <img
@@ -111,7 +111,7 @@ export default function ProcessSection() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col lg:translate-y-10 gap-y-10">
+              <div data-aos="fade-up-left" className="flex flex-col lg:translate-y-10 gap-y-10">
                 <div className="hidden lg:flex translate-x-24 items-center gap-x-4">
                   <div className="border border-dotted p-4 rounded-full">
                     <img

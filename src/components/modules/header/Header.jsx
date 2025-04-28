@@ -2,11 +2,9 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Navigation } from "swiper/modules";
-
+import { Link } from "react-router-dom";
 
 export default function Header() {
-
-
   const swiperRef = useRef(null);
 
   const headerImages = [
@@ -18,7 +16,6 @@ export default function Header() {
 
   return (
     <>
-    
       <header className=" w-full  child:font-Oswald   ">
         {/* Header Slider Section */}
         <div className="w-full relative   ">
@@ -60,7 +57,7 @@ export default function Header() {
             </div>
             <div className=" mt-3 container  ">
               <button className="text-right hover:bg-white hover:text-black transition-all ease-out duration-300 px-6 py-3 border uppercase">
-                buy now
+                <Link to={'/price'}>buy now</Link>
               </button>
             </div>
           </section>

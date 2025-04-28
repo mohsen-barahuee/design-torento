@@ -2,15 +2,27 @@ import React, { useEffect, useState } from 'react'
 import Footer from './components/modules/footer/Footer'
 import Navbar from './components/modules/navbar/Navbar'
 import { useRoutes, useLocation } from 'react-router-dom'
+import Loading from './components/modules/loading/Loading'
 import routes from './route'
-
-
+import Aos from 'aos';
+import "aos/dist/aos.css";
 export default function App() {
 
+
+  useEffect(() => {
+    Aos.init({
+      delay: 200, 
+      duration: 500, 
+      once: false 
+    });
+  }, []);
   const [token, setToken] = useState({})
   const location = useLocation()
   let route = useRoutes(routes)
   const [scrollPostion, setScrollPosition] = useState(0)
+
+
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}/api/user`, {
@@ -21,28 +33,29 @@ export default function App() {
       },
     }).then((respnse) => respnse.json().then((data) => {
       setToken(data.verfiyToken)
+      setLoading(false)
     }));
   }, []);
 
-  
-
-  // useEffect(() => {
-
-  //   window.addEventListener("scroll", () => {
-  //     setScrollPosition(window.scrollY)
-
-  //   })
-  // }, [scrollPostion])
 
 
+  useEffect(() => {
+
+    window.addEventListener("scroll", () => {
+      setScrollPosition(window.scrollY)
+
+    })
+  }, [scrollPostion])
 
 
 
-
+  if (loading) {
+    return <Loading />
+  }
 
 
   return (
-    < >
+    <div className=' overflow-hidden' >
       <svg className='hidden'>
         <symbol id='user-icon' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -93,6 +106,6 @@ export default function App() {
 
       {route}
       <Footer />
-    </>
+    </div>
   )
 }

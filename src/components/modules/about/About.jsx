@@ -1,14 +1,20 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { useLocation } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function About() {
-
-  const location = useLocation()
-
-  
+  useEffect(() => {
+    Aos.init();
+  }, []);
+  const location = useLocation();
 
   return (
-    <div className={`${location.pathname !== "/" ? "mt-40 lg:mt-72" : "my-20"} lg:px-20`}>
+    <div data-aos="fade-down"
+      className={`${
+        location.pathname !== "/" ? "mt-40 lg:mt-72" : "my-20"
+      } lg:px-20`}
+    >
       <div>
         <div className="flex flex-wrap md:flex-nowrap gap-y-6 px-10 lg:px-0  justify-center md:gap-x-20">
           <div className="md:w-[450px]">

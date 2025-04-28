@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../modules/loading/Loading";
 
 export default function Register() {
   const navigate = useNavigate();
-
   const [login, setLogin] = useState(true);
 
   const [firstname, setFirstName] = useState("");
@@ -49,11 +49,12 @@ export default function Register() {
     );
 
     if (response.status === 200) {
-    
       navigate("/");
-      window.location.reload()
+      window.location.reload();
     }
   };
+
+
 
   return (
     <div className="mt-52 px-[380px]">

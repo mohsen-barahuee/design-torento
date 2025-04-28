@@ -14,9 +14,6 @@ export default function CurrentNews() {
     return () => window.removeEventListener("resize", resizeHandler);
   }, []);
 
-
-  
-
   const currenNewsValues = [
     {
       id: 1,
@@ -46,7 +43,10 @@ export default function CurrentNews() {
 
   return (
     <div className="container px-5  my-10  lg:px-36">
-      <div className=" uppercase flex flex-col gap-y-3  md:flex-row gap-x-4 my-10 justify-center md:justify-start text-5xl font-Oswald tracking-widest">
+      <div
+        data-aos="fade-right"
+        className=" uppercase flex flex-col gap-y-3  md:flex-row gap-x-4 my-10 justify-center md:justify-start text-5xl font-Oswald tracking-widest"
+      >
         <h4>current</h4>
         <h4 className="text-secondary">news</h4>
       </div>
@@ -59,11 +59,15 @@ export default function CurrentNews() {
           )
           .map((items, index) => {
             return (
-              <div key={index} className="relative">
-                <div>
+              <div
+                data-aos="zoom-in"
+                key={index}
+                className="relative current-news-container"
+              >
+                <div className="current-news-image">
                   <img src={items.src} alt="" />
                 </div>
-                <div className=" absolute -bottom-5  left-1/2 -translate-x-1/2 px-10 py-5 bg-card-color   capitalize ">
+                <div className=" absolute -bottom-5 current-news-card  left-1/2 -translate-x-1/2 px-10 py-5 bg-card-color   capitalize ">
                   <div className="font-Didact-Gothic text-text-color text-sm tracking-widest text-nowrap">
                     <span>architecton</span>
                     <span>2024 - 12</span>
@@ -87,7 +91,7 @@ export default function CurrentNews() {
           )
           .map((items, index) => {
             return (
-              <div key={index} className="relative">
+              <div data-aos="zoom-in" key={index} className="relative">
                 <div>
                   <img className="" src={items.src} alt="" />
                 </div>
@@ -133,9 +137,9 @@ export default function CurrentNews() {
                       console.log("Defual Value");
                   }
                 }}
-                className="w-4 h-4 cursor-pointer  border-2 border-secondary rounded-full flex items-center justify-center  "
+                className="w-4 h-4 cursor-pointer  border-2 border-secondary hover:bg-secondary transition-all duration-150 rounded-full flex items-center justify-center  "
               >
-                <div className="w-2 h-2 rounded-full bg-primary"></div>
+                <div className="w-2 h-2 rounded-full bg-primary "></div>
               </div>
             );
           })}

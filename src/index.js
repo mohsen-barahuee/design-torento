@@ -7,14 +7,14 @@ import "swiper/css";
 import 'swiper/css/navigation';
 import "swiper/css/pagination";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-     <App/>
+      <App />
     </React.StrictMode>
   </BrowserRouter>
 

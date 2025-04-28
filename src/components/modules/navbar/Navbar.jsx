@@ -28,15 +28,15 @@ export default function Navbar({ path, scroll, token }) {
     <div
       className={`${
         path.pathname === "/" || "process" ? "fixed  top-0" : ""
-      } bg-primary px-5 lg:px-0   transition-all child:font-Oswald   w-full ${
-        scroll > 150 ? "lg:bg-primary fixed  top-0  " : "md:bg-inherit "
-      }  flex flex-row-reverse items-center justify-between z-50`}
+      } bg-primary px-5 md:px-0   transition-all child:font-Oswald   w-full ${
+        scroll > 150 ? "md:bg-primary fixed  top-0  " : "md:bg-inherit "
+      }  flex flex-row-reverse items-center justify-between px-10 z-50`}
     >
       {/* Desktop nav */}
-      <nav className=" hidden lg:flex items-center lg:my-0  ">
+      <nav className=" hidden md:flex items-center lg:my-0   ">
         <ul
-          className=" flex items-center  md:pr-10 lg:pr-20 gap-x-4 text-xl  child:uppercase 
-       child:transition-all child:ease-linear childduration-200 child:cursor-pointer "
+          className=" flex items-center   md:pr-10 lg:pr-20 gap-x-4 text-xl  child:uppercase 
+       child:transition-all child:linear  child:duration-200 child:delay-75 child:cursor-pointer "
         >
           <li
             className={
@@ -58,15 +58,21 @@ export default function Navbar({ path, scroll, token }) {
           </li>
           <li className="hover:text-secondary">services</li>
           <li className="hover:text-secondary">projects</li>
-          <li>
-            <DropDown
-              title={"pages"}
-              items={[
-                { href: "/price", title: "pricig" },
-                { href: "/process", title: "process" },
-                { href: "/*", title: "404" },
-              ]}
-            />
+          <li className="relative drop-down transition-all delay-75 duration-75">
+            pages
+      
+            <ul className="bg-card-color transition-all pr-40 pl-5 text-nowrap delay-75 child-hover:text-secondary   absolute  text-base w-full flex flex-col gap-y-5 font-Didact-Gothic capitalize text-center  py-4 ">
+                <li>
+                  <Link to={"/price"}>pricing</Link>
+                </li>
+                <li>
+                  <Link to={"/process"}>process</Link>
+                </li>
+                <li>
+                  <Link to={"/*"}>404</Link>
+                </li>
+                
+              </ul>
           </li>
           <li
             className={
@@ -104,7 +110,7 @@ export default function Navbar({ path, scroll, token }) {
       </nav>
 
       {/* Mobile Nav */}
-      <div className="lg:hidden">
+      <div className="md:hidden">
         {sideBar && (
           <div className="fixed top-0 right-0 opacity-75 w-full h-screen bg-black"></div>
         )}
