@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import DropDown from "../drop-down/DropDown";
 import { Link } from "react-router-dom";
 
@@ -15,13 +15,10 @@ export default function Navbar({ path, scroll, token }) {
       },
     });
 
-    if( response.status === 200){
-
-      alert("Log Out successfully")
-      window.location.reload()
-
+    if (response.status === 200) {
+      alert("Log Out successfully");
+      window.location.reload();
     }
-    
   };
 
   return (
@@ -60,19 +57,17 @@ export default function Navbar({ path, scroll, token }) {
           <li className="hover:text-secondary">projects</li>
           <li className="relative drop-down transition-all delay-75 duration-75">
             pages
-      
             <ul className="bg-card-color transition-all pr-40 pl-5 text-nowrap delay-75 child-hover:text-secondary   absolute  text-base w-full flex flex-col gap-y-5 font-Didact-Gothic capitalize text-center  py-4 ">
-                <li>
-                  <Link to={"/price"}>pricing</Link>
-                </li>
-                <li>
-                  <Link to={"/process"}>process</Link>
-                </li>
-                <li>
-                  <Link to={"/*"}>404</Link>
-                </li>
-                
-              </ul>
+              <li>
+                <Link to={"/price"}>pricing</Link>
+              </li>
+              <li>
+                <Link to={"/process"}>process</Link>
+              </li>
+              <li>
+                <Link to={"/*"}>404</Link>
+              </li>
+            </ul>
           </li>
           <li
             className={
@@ -137,9 +132,15 @@ export default function Navbar({ path, scroll, token }) {
             </div>
           </div>
           <div className="p-3 pt-5">
-            <button className="bg-secondary w-full py-2 font-Didact-Gothic uppercase ">
-              Login | sign up
-            </button>
+            {token ? (
+              <button className="bg-secondary w-full py-2 font-Didact-Gothic uppercase " >
+                <Link to={'/account'}>my account</Link>
+              </button>
+            ) : (
+              <button className="bg-secondary w-full py-2 font-Didact-Gothic uppercase ">
+                Login | sign up
+              </button>
+            )}
           </div>
           <ul className=" w-full flex flex-col  items-end  font-Didact-Gothic child:border-b child:border-b-text-color text-text-color  child:py-2  px-4 child:w-full text-sm text-right tracking-widest uppercase  ">
             <li className="hover:text-secondary">

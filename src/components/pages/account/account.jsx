@@ -36,14 +36,19 @@ export default function Account() {
     <div className=" my-40 m:my-72 px-5 container">
       <div className="flex flex-col-reverse md:flex-row flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-x-10">
         <InsertBlog writer={token._id} />
-        <div className="  border border-text-color rounded-md px-10 p-2">
+        <div className="  border border-text-color rounded-md max-h-56 px-10 p-2">
           <div className="flex justify-center items-center gap-x-5">
-            <span>{token.email}</span>
-            <img src={token.image} alt="" className="  md:w-20 md:h-20 rounded-full" />
+            <span className="text-nowrap">Email : {token.email}</span>
+            <img src={token.image} alt="" className="  w-20 h-20 rounded-full" />
           </div>
           <div className="my-5">
             <ul className=" child:mt-5 child:border-b child:w-full">
-              <li className="text-end p-2 ">log out</li>
+              <li>
+                first name :  {token.firstname}
+              </li>
+              <li>
+                last tname :  {token.lastname}
+              </li>
             </ul>
           </div>
         </div>

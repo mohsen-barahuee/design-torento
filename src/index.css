@@ -59,10 +59,17 @@
     bottom: 10px;
   }
 
+  .our-team-container:hover .our-team-bottom-slide{
+    transition: all ease 150ms 50ms;
+    padding-bottom:20px;
+    padding-top:20px;
+    height: auto;
+
+  }
 
 
 
-  
+
   @keyframes loading {
     from {
       width: 0px;

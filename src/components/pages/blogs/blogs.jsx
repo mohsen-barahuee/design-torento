@@ -16,7 +16,7 @@ export default function Blogs() {
           `${process.env.REACT_APP_API_URL}/api/blogs/`
         );
         const data = await response.json();
-        setBlogs(data.getBlog);
+        setBlogs(data.getBlog.reverse());
         setLoading(false);
       } catch (error) {
         console.error("Error fetching blogs:", error);
